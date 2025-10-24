@@ -21,6 +21,8 @@ const connect = async ()=> {
 }
 
 //middlewares
+app.use(express.json())
+
 app.use("/auth", authRoute)
 app.use("/users", usersRoute)
 app.use("/hotels", hotelsRoute)
