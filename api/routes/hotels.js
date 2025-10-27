@@ -32,6 +32,17 @@ router.put("/:id", async (req, res)=>{
 })
 
 //DELETE
+router.delete("/:id", async (req, res)=>{
+    try{
+        const updateHotel = await Hotel.findByIdAndDelete(
+            req.params.id,
+        )
+        res.status(200).json("hotel has been deleted")
+    }
+    catch(error){
+        res.status(500).json(error)
+    }
+})
 //GET
 //GETALL
 
